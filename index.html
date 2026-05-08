@@ -58,6 +58,21 @@ td{padding:10px 14px;border-top:1px solid var(--color-border-subtle);font-size:1
 .badge-declined{background:rgba(232,96,96,.14);color:rgba(253,220,220,1);border:1px solid rgba(232,96,96,.35)}
 details{background:var(--color-surface-elevated);border:1px solid var(--color-border-subtle);border-radius:var(--r-lg);padding:14px;margin-top:24px;font-size:13px;color:var(--color-text-secondary)}
 summary{cursor:pointer;font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-primary)}
+.metric-help{font-size:11px;color:var(--color-text-tertiary);margin-top:6px;font-style:italic;line-height:1.35}
+.chart-help{font-size:12px;color:var(--color-text-tertiary);margin:-4px 0 10px;font-style:italic;line-height:1.4}
+.section-intro{font-size:13px;color:var(--color-text-secondary);margin:-4px 0 12px;line-height:1.5}
+.deduction-box{background:linear-gradient(135deg,rgba(245,196,0,.05),rgba(107,158,208,.05));border:1px solid var(--color-brand-primary);border-radius:var(--r-lg);padding:22px 24px;margin:8px 0 28px;box-shadow:var(--shadow-card)}
+.deduction-label{font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--color-brand-primary);margin-bottom:10px}
+.deduction-headline{font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--color-text-primary);margin-bottom:14px;line-height:1.25}
+.deduction-body{font-size:14px;color:var(--color-text-secondary);line-height:1.6}
+.deduction-body strong{color:var(--color-text-primary)}
+.deduction-table{margin:14px 0 4px;border-radius:var(--r-md);overflow:hidden;width:100%}
+.deduction-table th,.deduction-table td{padding:8px 12px;font-size:13px;background:var(--color-surface-sunken);border-top:1px solid var(--color-border-subtle)}
+.deduction-table th{text-transform:none;letter-spacing:0;font-weight:700;color:var(--color-text-primary);font-family:var(--font-body)}
+.verdict-pill{display:inline-block;padding:3px 12px;border-radius:var(--r-pill);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-left:8px}
+.verdict-positive{background:rgba(45,140,122,.18);color:var(--_teal-light);border:1px solid rgba(45,140,122,.4)}
+.verdict-mixed{background:rgba(245,196,0,.15);color:var(--_y200);border:1px solid rgba(245,196,0,.35)}
+.verdict-negative{background:rgba(232,96,96,.18);color:rgba(253,220,220,1);border:1px solid rgba(232,96,96,.4)}
 </style>
 
 </head>
@@ -78,7 +93,7 @@ summary{cursor:pointer;font-family:var(--font-display);font-size:12px;font-weigh
       <div class="hdr-sub">Kit Kat &amp; Easy Build — sales correlation with formal merchandising visits</div>
     </div>
   </div>
-  <div class="hdr-meta">Generated 2026-05-08 16:26<br>Source: AWS sales · Visits log</div>
+  <div class="hdr-meta">Generated 2026-05-08 16:38<br>Source: AWS sales · Visits log</div>
 </div>
 <div class="tab-bar">
   <button class="tab-btn active" onclick="showTab('overview',this)">Overview</button>
@@ -86,15 +101,46 @@ summary{cursor:pointer;font-family:var(--font-display);font-size:12px;font-weigh
   <button class="tab-btn" onclick="showTab('easybuild',this)">Easy Build</button>
 </div>
 <div id="tab-overview" class="tab-panel active">
+  <p class="section-intro" style="margin-top:0;margin-bottom:18px;">
+    This page summarises the impact of the formal merchandising program at Kit Kat and Easy Build.
+    Each card below answers one question; hover or read the helper line beneath the value to see how to interpret it.
+  </p>
   <div class="hero">
-    <div class="hero-card"><div class="hero-label">Reporting Window</div><div class="hero-value" style="font-size:18px;">Oct 2025 → present (7 months)</div></div>
-    <div class="hero-card"><div class="hero-label">Combined YoY</div><div class="hero-value">+15.5%</div></div>
-    <div class="hero-card"><div class="hero-label">Extra Revenue</div><div class="hero-value">R1.2M</div></div>
-    <div class="hero-card"><div class="hero-label">51 Visits · R23K/visit</div><div class="hero-value" style="font-size:18px;">all rep NP</div></div>
+    <div class="hero-card">
+      <div class="hero-label">Reporting Window</div>
+      <div class="hero-value" style="font-size:18px;">Oct 2025 → present (7 months)</div>
+      <div class="metric-help">The time period this report covers — from the first logged merchandising visit until today.</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-label">Combined YoY</div>
+      <div class="hero-value">+15.5%</div>
+      <div class="metric-help">How much more revenue we're earning per month vs the same month one year ago, averaged across both groups. Higher = customers are buying more this year.</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-label">Extra Revenue</div>
+      <div class="hero-value">R1.2M</div>
+      <div class="metric-help">Total Rand value added compared to last year's matched months. Negative would mean the prior-year baseline was higher.</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-label">51 Visits · R23K/visit</div>
+      <div class="hero-value" style="font-size:18px;">all rep NP</div>
+      <div class="metric-help">Total store visits logged in the window, divided into the extra revenue. Useful as a rough ROI check against rep time and travel cost.</div>
+    </div>
   </div>
-  <div class="section-title">Executive Summary</div>
-  <p class="prose">Since formal merchandising began in Oct 2025 → present (7 months), Kit Kat revenue is +17.5% YoY and Easy Build is +8.9% YoY — a combined R1.2M of incremental revenue across 51 logged visits. The data supports continued investment in the program.</p>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px;">
+
+  <div class="deduction-box">
+    <div class="deduction-label">★ Deduction <span class="verdict-pill verdict-mixed">Mixed signal</span></div>
+    <div class="deduction-headline">Merchandising is clearly working at Kit Kat; results at Easy Build are inconclusive against the macro baseline.</div>
+    <div class="deduction-body"><p style='margin-bottom:10px'>Kit Kat posted <strong>+17.5%</strong> gross YoY growth and Easy Build <strong>+8.9%</strong>. After subtracting the ~<strong>+10.0%</strong> baseline lift seen broadly across the business in 2026 (price increases, market growth), the merchandising-attributable component is:</p><table class="deduction-table">
+  <tr><th>Group</th><th>Gross YoY</th><th>Less baseline</th><th>Net (merchandising-attributable)</th><th>Estimated R lift</th></tr>
+  <tr><td>Kit Kat</td><td>+17.5%</td><td>-10.0%</td><td><strong>+7.5%</strong></td><td><strong>R552K</strong></td></tr>
+  <tr><td>Easy Build</td><td>+8.9%</td><td>-10.0%</td><td><strong>-1.1%</strong></td><td><strong>-R31K</strong></td></tr>
+</table><p style='margin-bottom:10px'><strong>Recommendation:</strong> Continue the Kit Kat program — it is generating approximately R552K of incremental revenue above baseline expectations. For Easy Build, investigate why the program hasn't translated to outperformance: rep-visit cadence, store-by-store coverage gaps, or product mix issues are likely candidates.</p></div>
+  </div>
+
+  <div class="section-title">Group breakdown</div>
+  <p class="section-intro">Click into either tab above for the full per-group story (visits, monthly sales chart, year-over-year comparison, per-store breakdown).</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px;">
     <div class="chart-container">
       <div class="chart-title">Kit Kat — at a glance</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px;">
@@ -125,38 +171,61 @@ summary{cursor:pointer;font-family:var(--font-display);font-size:12px;font-weigh
 <li><strong>Sales source:</strong> <code>Sales_Invoices_All.parquet</code> — accno-based filter.</li>
 <li><strong>Visits source:</strong> <code>Merchandising_Visits_Log.xlsx</code> — store-name regex match.</li>
 <li><strong>Comparison method:</strong> Year-over-year same-month comparison, post-merchandising months only.</li>
+<li><strong>Macro baseline:</strong> The Deduction block subtracts a flat 10% YoY assumption from each group's gross growth to estimate the merchandising-attributable component. This represents the broad 2026 lift seen across the business (price increases + general market growth) and is set in <code>MACRO_BASELINE_LIFT_2026</code>.</li>
 <li><strong>Caveat:</strong> April 2026 visit data may be incomplete (known Zoho export gap).</li>
-<li><strong>Caveat:</strong> Correlation, not causation. Other factors (macro, pricing, rep effort) may contribute.</li>
+<li><strong>Caveat:</strong> Correlation, not causation. Other factors (macro, pricing, rep effort) may contribute. The 10% baseline is a reasonable estimate, not a precise measurement.</li>
 </ul>
 </details>
 </div>
 <div id="tab-kitkat" class="tab-panel">
   <div class="hero">
-    <div class="hero-card"><div class="hero-label">YoY Growth</div><div class="hero-value">+17.5%</div></div>
-    <div class="hero-card"><div class="hero-label">Cumulative Extra</div><div class="hero-value">R1.2M</div></div>
-    <div class="hero-card"><div class="hero-label">Visits</div><div class="hero-value">33</div></div>
-    <div class="hero-card"><div class="hero-label">R per Visit</div><div class="hero-value">R36K</div></div>
+    <div class="hero-card">
+      <div class="hero-label">YoY Growth</div>
+      <div class="hero-value">+17.5%</div>
+      <div class="metric-help">Average growth in monthly revenue compared to the same month one year ago. <em>Read it as:</em> "On average, every post-merchandising month is X% bigger than the matching month last year."</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-label">Cumulative Extra</div>
+      <div class="hero-value">R1.2M</div>
+      <div class="metric-help">Total Rand value added vs the matched prior-year months. Negative means the prior-year baseline was higher in some months — common when last year had an unusual spike.</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-label">Visits</div>
+      <div class="hero-value">33</div>
+      <div class="metric-help">Number of formal merchandising visits logged in this window. More visits = more attention, but quality matters too.</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-label">R per Visit</div>
+      <div class="hero-value">R36K</div>
+      <div class="metric-help">Cumulative extra revenue divided by visits — a rough ROI signal. The bigger this number, the more bang per visit.</div>
+    </div>
   </div>
 
   <div class="section-title">1 — What we did</div>
+  <p class="section-intro">This section shows the activity side of the program — how many visits happened, where, and when.</p>
   <p class="prose">33 visits across 16 unique Kit Kat stores between Oct 2025 and May 2026, peaking in Jan 2026 with 9 visits. Average visit duration 3 minutes.</p>
   <div class="chart-container">
     <div class="chart-title">Visits per Month — Kit Kat</div>
+    <p class="chart-help">Each bar is one calendar month. Bar height = number of visits logged that month. Empty months either had no visits or fall outside the merchandising window.</p>
     <canvas id="kitkat-visits" height="80"></canvas>
   </div>
 
   <div class="section-title">2 — What happened</div>
+  <p class="section-intro">This section shows what happened to revenue during and around the merchandising window. The first chart is the long view; the second is the apples-to-apples comparison.</p>
   <p class="prose">6 of 7 months posted positive YoY growth, averaging +17.5%. Strongest gain: Nov 2025 (+61% vs Nov 2024). Weakest month: Oct 2025 (-27% vs Oct 2024).</p>
   <div class="chart-container">
     <div class="chart-title">Monthly Sales — Kit Kat (yellow = merchandising era)</div>
+    <p class="chart-help">Each bar = one month's net sales. <strong>Blue bars</strong> are months <em>before</em> formal merchandising. <strong>Yellow bars</strong> are months <em>after</em> the program started. Look for whether the yellow bars are visibly taller than the blue bars on average.</p>
     <canvas id="kitkat-sales" height="100"></canvas>
   </div>
   <div class="chart-container">
     <div class="chart-title">YoY Same-Month % — Kit Kat</div>
+    <p class="chart-help">Each bar compares one post-merchandising month to the <em>same month one year earlier</em>. <strong style="color:#2D8C7A">Green</strong> = grew vs same month last year. <strong style="color:#E86060">Red</strong> = shrunk. This view removes seasonal noise — December's normal spike doesn't fool the comparison.</p>
     <canvas id="kitkat-yoy" height="80"></canvas>
   </div>
 
   <div class="section-title">3 — Per-store breakdown</div>
+  <p class="section-intro">Each row is one customer account in this group. The <strong>%∆</strong> column compares post-merchandising monthly revenue to pre-merchandising, so it answers: "Has this store's typical monthly revenue gone up since merchandising started?" The <strong>Status</strong> badge translates that to a quick traffic-light: 🟢 strong (≥ +15%), 🟡 mixed (-5% to +15%), 🔴 declined (< -5%).</p>
   <p class="prose">1 of 2 active accounts are up post-merch. Strongest mover: KK021 at +105%. 1 active store declined: KK022 (-22%).</p>
   <table>
     <thead>
@@ -180,8 +249,9 @@ summary{cursor:pointer;font-family:var(--font-display);font-size:12px;font-weigh
 <li><strong>Sales source:</strong> <code>Sales_Invoices_All.parquet</code> — accno-based filter.</li>
 <li><strong>Visits source:</strong> <code>Merchandising_Visits_Log.xlsx</code> — store-name regex match.</li>
 <li><strong>Comparison method:</strong> Year-over-year same-month comparison, post-merchandising months only.</li>
+<li><strong>Macro baseline:</strong> The Deduction block subtracts a flat 10% YoY assumption from each group's gross growth to estimate the merchandising-attributable component. This represents the broad 2026 lift seen across the business (price increases + general market growth) and is set in <code>MACRO_BASELINE_LIFT_2026</code>.</li>
 <li><strong>Caveat:</strong> April 2026 visit data may be incomplete (known Zoho export gap).</li>
-<li><strong>Caveat:</strong> Correlation, not causation. Other factors (macro, pricing, rep effort) may contribute.</li>
+<li><strong>Caveat:</strong> Correlation, not causation. Other factors (macro, pricing, rep effort) may contribute. The 10% baseline is a reasonable estimate, not a precise measurement.</li>
 </ul>
 </details>
 
@@ -207,31 +277,53 @@ summary{cursor:pointer;font-family:var(--font-display);font-size:12px;font-weigh
 </div>
 <div id="tab-easybuild" class="tab-panel">
   <div class="hero">
-    <div class="hero-card"><div class="hero-label">YoY Growth</div><div class="hero-value">+8.9%</div></div>
-    <div class="hero-card"><div class="hero-label">Cumulative Extra</div><div class="hero-value">-R43K</div></div>
-    <div class="hero-card"><div class="hero-label">Visits</div><div class="hero-value">18</div></div>
-    <div class="hero-card"><div class="hero-label">R per Visit</div><div class="hero-value">-R2K</div></div>
+    <div class="hero-card">
+      <div class="hero-label">YoY Growth</div>
+      <div class="hero-value">+8.9%</div>
+      <div class="metric-help">Average growth in monthly revenue compared to the same month one year ago. <em>Read it as:</em> "On average, every post-merchandising month is X% bigger than the matching month last year."</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-label">Cumulative Extra</div>
+      <div class="hero-value">-R43K</div>
+      <div class="metric-help">Total Rand value added vs the matched prior-year months. Negative means the prior-year baseline was higher in some months — common when last year had an unusual spike.</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-label">Visits</div>
+      <div class="hero-value">18</div>
+      <div class="metric-help">Number of formal merchandising visits logged in this window. More visits = more attention, but quality matters too.</div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-label">R per Visit</div>
+      <div class="hero-value">-R2K</div>
+      <div class="metric-help">Cumulative extra revenue divided by visits — a rough ROI signal. The bigger this number, the more bang per visit.</div>
+    </div>
   </div>
 
   <div class="section-title">1 — What we did</div>
+  <p class="section-intro">This section shows the activity side of the program — how many visits happened, where, and when.</p>
   <p class="prose">18 visits across 7 unique Easy Build stores between Nov 2025 and May 2026, peaking in Dec 2025 with 6 visits. Average visit duration 10 minutes.</p>
   <div class="chart-container">
     <div class="chart-title">Visits per Month — Easy Build</div>
+    <p class="chart-help">Each bar is one calendar month. Bar height = number of visits logged that month. Empty months either had no visits or fall outside the merchandising window.</p>
     <canvas id="easybuild-visits" height="80"></canvas>
   </div>
 
   <div class="section-title">2 — What happened</div>
+  <p class="section-intro">This section shows what happened to revenue during and around the merchandising window. The first chart is the long view; the second is the apples-to-apples comparison.</p>
   <p class="prose">5 of 6 months posted positive YoY growth, averaging +8.9%. Strongest gain: Jan 2026 (+39% vs Jan 2025). Weakest month: Nov 2025 (-49% vs Nov 2024). Cumulative same-month delta is dragged negative by an unusually strong Nov 2024 prior-year baseline (~2.7× the median month); the rest of the window is broadly positive.</p>
   <div class="chart-container">
     <div class="chart-title">Monthly Sales — Easy Build (yellow = merchandising era)</div>
+    <p class="chart-help">Each bar = one month's net sales. <strong>Blue bars</strong> are months <em>before</em> formal merchandising. <strong>Yellow bars</strong> are months <em>after</em> the program started. Look for whether the yellow bars are visibly taller than the blue bars on average.</p>
     <canvas id="easybuild-sales" height="100"></canvas>
   </div>
   <div class="chart-container">
     <div class="chart-title">YoY Same-Month % — Easy Build</div>
+    <p class="chart-help">Each bar compares one post-merchandising month to the <em>same month one year earlier</em>. <strong style="color:#2D8C7A">Green</strong> = grew vs same month last year. <strong style="color:#E86060">Red</strong> = shrunk. This view removes seasonal noise — December's normal spike doesn't fool the comparison.</p>
     <canvas id="easybuild-yoy" height="80"></canvas>
   </div>
 
   <div class="section-title">3 — Per-store breakdown</div>
+  <p class="section-intro">Each row is one customer account in this group. The <strong>%∆</strong> column compares post-merchandising monthly revenue to pre-merchandising, so it answers: "Has this store's typical monthly revenue gone up since merchandising started?" The <strong>Status</strong> badge translates that to a quick traffic-light: 🟢 strong (≥ +15%), 🟡 mixed (-5% to +15%), 🔴 declined (< -5%).</p>
   <p class="prose">4 of 6 active accounts are up post-merch. Strongest mover: KE008 at +62%. 2 active stores declined: KE009 (-12%), KE010 (-8%).</p>
   <table>
     <thead>
@@ -257,8 +349,9 @@ summary{cursor:pointer;font-family:var(--font-display);font-size:12px;font-weigh
 <li><strong>Sales source:</strong> <code>Sales_Invoices_All.parquet</code> — accno-based filter.</li>
 <li><strong>Visits source:</strong> <code>Merchandising_Visits_Log.xlsx</code> — store-name regex match.</li>
 <li><strong>Comparison method:</strong> Year-over-year same-month comparison, post-merchandising months only.</li>
+<li><strong>Macro baseline:</strong> The Deduction block subtracts a flat 10% YoY assumption from each group's gross growth to estimate the merchandising-attributable component. This represents the broad 2026 lift seen across the business (price increases + general market growth) and is set in <code>MACRO_BASELINE_LIFT_2026</code>.</li>
 <li><strong>Caveat:</strong> April 2026 visit data may be incomplete (known Zoho export gap).</li>
-<li><strong>Caveat:</strong> Correlation, not causation. Other factors (macro, pricing, rep effort) may contribute.</li>
+<li><strong>Caveat:</strong> Correlation, not causation. Other factors (macro, pricing, rep effort) may contribute. The 10% baseline is a reasonable estimate, not a precise measurement.</li>
 </ul>
 </details>
 
